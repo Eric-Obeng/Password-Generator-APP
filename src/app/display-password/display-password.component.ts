@@ -9,4 +9,9 @@ import { Component } from '@angular/core';
 })
 export class DisplayPasswordComponent {
   password: string = 'Eric';
+
+  copyPassword() {
+    navigator.clipboard.writeText(this.password);
+    alert('Password copied');
+  }
 }
