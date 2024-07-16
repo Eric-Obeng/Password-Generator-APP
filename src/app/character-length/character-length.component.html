@@ -1,1 +1,10 @@
-<p>character-length works!</p>
+<div class="charater-length">
+  <label for="Charater Length"></label>
+  <input
+    type="range"
+    min="1"
+    max="20"
+    [(ngModel)]="length"
+    (input)="onLengthChange()"
+  />
+</div>
