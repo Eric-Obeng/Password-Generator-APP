@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-generate-button',
@@ -8,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './generate-button.component.css'
 })
 export class GenerateButtonComponent {
+  @Output() generate = new EventEmitter<void>();
 
+  generatePassword() {
+    this.generate.emit();
+  }
 }

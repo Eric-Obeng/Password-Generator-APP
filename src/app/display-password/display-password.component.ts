@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-display-password',
@@ -8,10 +8,15 @@ import { Component } from '@angular/core';
   styleUrl: './display-password.component.css',
 })
 export class DisplayPasswordComponent {
-  password: string = 'Eric';
+  @Input() password: string = '';
+
+  copiedMessage: string = '';
 
   copyPassword() {
     navigator.clipboard.writeText(this.password);
-    alert('Password copied');
+    this.copiedMessage = 'COPIED';
+    setTimeout(() => {
+      this.copiedMessage = '';
+    }, 2000);
   }
 }

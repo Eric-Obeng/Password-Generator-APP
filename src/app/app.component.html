@@ -1,7 +1,11 @@
 <main class="password__generator-app">
-  <app-display-password />
-  <app-character-length />
-  <app-options />
-  <app-strength-indicator />
-  <app-generate-button />
+  <div class="display-pswd">
+    <app-display-password [password]="password" />
+  </div>
+  <div class="password-gen">
+    <app-character-length (lengthChange)="onLengthChange($event)" />
+    <app-options (optionsChange)="onOptionsChange($event)" />
+    <app-strength-indicator [password]="password" />
+    <app-generate-button (generate)="generatePassword()" />
+  </div>
 </main>
